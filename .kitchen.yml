@@ -1,0 +1,20 @@
+---
+
+driver:
+  name: docker
+
+# More options:
+# https://github.com/neillturner/kitchen-ansible/blob/master/provisioner_options.md
+
+provisioner:
+  name: ansible_playbook
+  hosts: localhost
+  ansible_extra_flags: --extra-vars ruby_version=2.3.1
+
+platforms:
+  - name: ubuntu-15.10
+  - name: ubuntu-16.04
+
+suites:
+  - name: default
+    playbook: test/integration/default.yml

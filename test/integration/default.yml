@@ -1,0 +1,11 @@
+---
+
+- name: default
+  hosts: localhost
+  vars:
+    pgbouncer_config:
+      - section: databases
+        option: foo
+        value: dbname=foo host=localhost port=5432 user=foo password=foo
+  roles:
+    - ansible-role-pgbouncer

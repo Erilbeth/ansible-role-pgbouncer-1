@@ -1,0 +1,13 @@
+---
+
+- include: validation.yml
+  tags:
+    - always
+
+- include: install.yml
+  tags:
+    - pgbouncer
+
+- include: configuration.yml
+  tags:
+    - pgbouncer

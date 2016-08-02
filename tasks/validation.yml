@@ -1,0 +1,9 @@
+---
+
+- name: validate ansible_distribution
+  assert:
+    that: "ansible_distribution == 'Ubuntu'"
+
+- name: validate ansible_distribution_release
+  assert:
+    that: "ansible_distribution_release in ['wily', 'xenial']"

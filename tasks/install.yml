@@ -1,0 +1,19 @@
+---
+
+- name: install repository key
+  apt_key:
+    url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+    state: present
+
+- name: install repository
+  apt_repository:
+    repo: "deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_distribution_release }}-pgdg main"
+
+- name: execute apt-get update
+  apt:
+    update_cache: true
+
+- name: install pgbouncer
+  apt:
+    name: pgbouncer
+    state: latest
