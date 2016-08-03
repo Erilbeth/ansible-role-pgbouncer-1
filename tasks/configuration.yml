@@ -6,7 +6,7 @@
     section: "{{ item.section | default('pgbouncer') }}"
     option: "{{ item.option }}"
     value: "{{ item.value }}"
-  with_items: pgbouncer_config
+  with_items: "{{ pgbouncer_config }}"
   when: "pgbouncer_config is defined"
   notify: reload pgbouncer
 
