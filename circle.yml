@@ -10,5 +10,6 @@ machine:
 
 test:
   override:
+    - ansible-lint .
     - bundle exec kitchen test:
         timeout: 600

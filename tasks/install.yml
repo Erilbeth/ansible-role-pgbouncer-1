@@ -16,4 +16,4 @@
 - name: install pgbouncer
   apt:
     name: pgbouncer
-    state: latest
+    state: present
